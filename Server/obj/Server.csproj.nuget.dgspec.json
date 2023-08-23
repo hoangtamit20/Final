@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\ProjectFinal\\Server\\Server.csproj": {}
+    "E:\\ProjectFinal\\Server\\Server.csproj": {}
   },
   "projects": {
-    "e:\\ProjectFinal\\Server\\Server.csproj": {
+    "E:\\ProjectFinal\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\ProjectFinal\\Server\\Server.csproj",
+        "projectUniqueName": "E:\\ProjectFinal\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "e:\\ProjectFinal\\Server\\Server.csproj",
+        "projectPath": "E:\\ProjectFinal\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "e:\\ProjectFinal\\Server\\obj\\",
+        "outputPath": "E:\\ProjectFinal\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
