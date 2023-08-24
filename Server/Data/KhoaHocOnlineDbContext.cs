@@ -9,25 +9,16 @@ namespace Server.Data
 {
     public class KhoaHocOnlineDbContext : DbContext
     {
-        public KhoaHocOnlineDbContext(DbContextOptions options) : base(options)
-        {
-            
-        }
+        public KhoaHocOnlineDbContext(DbContextOptions<KhoaHocOnlineDbContext> options) : base(options){}
 
         #region
-        public DbSet<NguoiDung> NguoiDungs {get;set;}
+        public DbSet<NguoiDung>? NguoiDungs {get;set;}
 
         #endregion
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            base.OnConfiguring(optionsBuilder);
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<NguoiDung>(nd => nd.HasIndex(nd => nd.TenDangNhap).IsUnique());
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<NguoiDung>().Property(nd => nd.Created).HasDefaultValue(DateTime.Now);
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ProjectFinal\\Server\\Server.csproj": {}
+    "e:\\ProjectFinal\\Server\\Server.csproj": {}
   },
   "projects": {
-    "E:\\ProjectFinal\\Server\\Server.csproj": {
+    "e:\\ProjectFinal\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ProjectFinal\\Server\\Server.csproj",
+        "projectUniqueName": "e:\\ProjectFinal\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "E:\\ProjectFinal\\Server\\Server.csproj",
+        "projectPath": "e:\\ProjectFinal\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
-        "outputPath": "E:\\ProjectFinal\\Server\\obj\\",
+        "outputPath": "e:\\ProjectFinal\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,7 +55,19 @@
               "target": "Package",
               "version": "[8.0.0-preview.6.23329.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0-preview.6.23329.4, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0-preview.6.23329.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.0-preview.6.23329.4, )"
             },

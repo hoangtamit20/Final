@@ -72,3 +72,8 @@ E:\ProjectFinal\Server\obj\Debug\net8.0\refint\Server.dll
 E:\ProjectFinal\Server\obj\Debug\net8.0\Server.pdb
 E:\ProjectFinal\Server\obj\Debug\net8.0\Server.genruntimeconfig.cache
 E:\ProjectFinal\Server\obj\Debug\net8.0\ref\Server.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\Humanizer.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\Mono.TextTemplating.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\System.CodeDom.dll

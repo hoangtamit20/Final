@@ -72,6 +72,8 @@ namespace Server.Entities
         public string? Email {get => email; set => email = value;}
 
         [RegularExpression("(84|0[3|5|7|8|9])+([0-9]{8,9})\b", ErrorMessage = "{0} định dạng không hợp lệ. {0} gồm 10 - 11 chữ số.")]
+        [StringLength(11, MinimumLength = 10, ErrorMessage = "{0} phải có ít nhất {2} chữ số và nhiều nhất {1} chữ số.")]
+        [Column(TypeName = "VARCHAR")]
         public string? SoDienThoai { get => soDienThoai; set => soDienThoai = value; }
 
         [StringLength(300, ErrorMessage = "{0} không được vượt quá {1} ký tự.")]
