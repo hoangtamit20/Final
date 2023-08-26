@@ -80,7 +80,7 @@ namespace Server.Entities
         [Column(TypeName = "NVARCHAR")]
         public string? DiaChi { get => diaChi; set => diaChi = value; }
 
-        [Column(TypeName = "NVARCHAR")]
+        [Column(TypeName = "NVARCHAR(MAX)")]
         [RegularExpression(@".*\.(gif|jpg|jpeg|tiff|png|bmp)$", ErrorMessage = "{0} không đúng định dạng.")]
         public string? HinhAnh { get => hinhAnh; set => hinhAnh = value; }
         public int VaiTro { get => vaiTro; set => vaiTro = value; }
@@ -88,6 +88,7 @@ namespace Server.Entities
 
         public override string ToString()
         {
+            System.Console.WriteLine($"{Id}{TenDangNhap}{MatKhau}{HoTen}{NgaySinh}{Email}{SoDienThoai}{DiaChi}{HinhAnh}{VaiTro}{Created}");
             return $"{Id}{TenDangNhap}{MatKhau}{HoTen}{NgaySinh}{Email}{SoDienThoai}{DiaChi}{HinhAnh}{VaiTro}{Created}";
         }
     }

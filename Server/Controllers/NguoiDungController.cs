@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Server.Models;
 using Server.Repositories.IRepository;
 using Server.Services.FilterService;
@@ -21,38 +22,27 @@ namespace Server.Controllers
             _repositoryOfEntity = repositoryOfEntity;
         }
 
-        // [HttpGet]
-        // public async Task<IActionResult> Index()
-        // {
-        //     if (await _repositoryOfEntity.GetAll()! == null)
-        //     {
-        //         return BadRequest("Entity is null");
-        //     }
-        //     return Ok(await _repositoryOfEntity.GetAll()!);
-        // }
-
-
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] PaginationFilterService filter)
+        public async Task<IActionResult> GetAll([FromQuery] PaginationFilterService paginationFilterService)
         {
-            var validFilter = new PaginationFilterService(filter.Filter!, filter.PageNumber!.Value, filter.PageSize!.Value);
+            var validFilter = new PaginationFilterService(paginationFilterService.Filter!, paginationFilterService.PageNumber!.Value, paginationFilterService.PageSize!.Value);
             var pagedData = await _repositoryOfEntity.GetAllFullOptions(validFilter)!;
-            var totalRecords = (await _repositoryOfEntity.GetAll()!).Count();
-            var totalPages = (int)Math.Ceiling((double)totalRecords / validFilter.PageSize!.Value);
+            var totalRecords = (await _repositoryOfEntity.GetAll(validFilter.Filter!)!).Count();
+            var totalPages = (int)Math.Ceiling((double)totalRecords / validFilter.PageSize!.Value) == 0 ? 1 : (int)Math.Ceiling((double)totalRecords / validFilter.PageSize!.Value);
 
             // Add Previous and Next page links
             string? prevPageLink = validFilter.PageNumber!.Value > 1
-                ? Url.Link("DefaultApi", new { PageNumber = validFilter.PageNumber!.Value - 1, PageSize = validFilter.PageSize!.Value })
+                ? Url.Link("DefaultApi", new { filter = validFilter.Filter == null ? null : validFilter.Filter, pageNumber = (validFilter.PageNumber!.Value > totalPages ? totalPages : validFilter.PageNumber!.Value) - 1, pageSize = validFilter.PageSize!.Value })
                 : null;
 
             string? nextPageLink = validFilter.PageNumber < totalPages
-                ? Url.Link("DefaultApi", new { PageNumber = validFilter.PageNumber + 1, PageSize = validFilter.PageSize!.Value })
+                ? Url.Link("DefaultApi", new { filter = validFilter.Filter == null ? null : validFilter.Filter, pageNumber = validFilter.PageNumber + 1, pageSize = validFilter.PageSize!.Value })
                 : null;
-            
-            string? firstPage = Url.Link("DefaultApi", new {PageNumber = 1, PageSize = validFilter.PageSize.Value});
-            string? lastPage = Url.Link("DefaultApi", new {PageNumber = totalPages, PageSize = validFilter.PageSize.Value});
 
-            var response = new PagedResponseService<List<NguoiDungModel>>(pagedData, validFilter.PageNumber.Value, validFilter.PageSize.Value)
+            string? firstPage = totalRecords == 0 ? null : Url.Link("DefaultApi", new { filter = validFilter.Filter == null ? null : validFilter.Filter, pageNumber = 1, pageSize = validFilter.PageSize.Value });
+            string? lastPage = totalRecords == 0 ? null : Url.Link("DefaultApi", new { filter = validFilter.Filter == null ? null : validFilter.Filter, pageNumber = totalPages, pageSize = validFilter.PageSize.Value });
+
+            var response = new PagedResponseService<List<NguoiDungModel>>(pagedData, validFilter.PageSize.Value, validFilter.PageNumber.Value)
             {
                 Filter = validFilter.Filter,
                 TotalPage = totalPages,
@@ -63,10 +53,7 @@ namespace Server.Controllers
                 LastPage = lastPage,
                 SortBy = null
             };
-
             return Ok(response);
         }
-
-        
     }
 }

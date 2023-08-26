@@ -20,10 +20,10 @@ namespace Server.Services.ResponseService
         public string? LastPage { get; set; }
 
 
-        public PagedResponseService(T data, int PageSize, int pageNumber)
+        public PagedResponseService(T data, int pageSize, int pageNumber)
         {
             this.Data = data;
-            this.PageSize = PageSize;
+            this.PageSize = pageSize;
             this.PageNumber = pageNumber;
         }
 

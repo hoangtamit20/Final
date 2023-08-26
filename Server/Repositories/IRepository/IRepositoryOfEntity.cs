@@ -8,7 +8,7 @@ namespace Server.Repositories.IRepository
 {
     public interface IRepositoryOfEntity<T>
     {
-        Task<List<T>>? GetAll();
+        Task<List<T>>? GetAll(string filter);
         Task<List<T>>? GetAllFullOptions(PaginationFilterService paginationFilterService);
         Task<T>? GetEntityById(int id);
         Task<bool> CreateEntity(T entity);

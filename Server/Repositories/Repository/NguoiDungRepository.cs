@@ -57,7 +57,7 @@ namespace Server.Repositories.Repository
             }
         }
 
-        public async Task<List<NguoiDungModel>>? GetAll() => _mapper.Map<List<NguoiDungModel>>(await _context.NguoiDungs!.ToListAsync());
+        public async Task<List<NguoiDungModel>>? GetAll(string? filter) => _mapper.Map<List<NguoiDungModel>>(filter == null ? await _context.NguoiDungs!.ToListAsync() : await _context.NguoiDungs!.Where(nd => nd.TenDangNhap!.Contains(filter!)).ToListAsync());
 
         public async Task<List<NguoiDungModel>>? GetAllFullOptions(string filter, string sortBy, int? pageIndex, int? pageSize)
         {
@@ -103,16 +103,19 @@ namespace Server.Repositories.Repository
 
             if (paginationFilterService.Filter != null)
             {
-                query = _context.NguoiDungs!.Where(nd => nd.ToString().Contains(paginationFilterService.Filter.ToString()));
+                query = _context.NguoiDungs!.Where(nd => nd.TenDangNhap!.Contains(paginationFilterService.Filter));
+                var sql = query.ToQueryString();
+                var list = query.ToList();
+                System.Console.WriteLine(sql);
+
             }
 
             if (paginationFilterService.PageSize != null && paginationFilterService.PageNumber != null)
             {
-                query = _context.NguoiDungs!.Skip((paginationFilterService.PageNumber.Value - 1) * paginationFilterService.PageSize.Value)
+                query = query.Skip((paginationFilterService.PageNumber.Value - 1) * paginationFilterService.PageSize.Value)
                             .Take(paginationFilterService.PageSize.Value);
             }
             return _mapper.Map<List<NguoiDungModel>>(await query.ToListAsync());
-
         }
 
         public async Task<NguoiDungModel>? GetEntityById(int id) => _mapper.Map<NguoiDungModel>((await _context.NguoiDungs!.FindAsync(id))!);

@@ -33,7 +33,7 @@ namespace Server.Migrations
                     b.Property<DateTime>("Created")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 8, 24, 7, 38, 44, 404, DateTimeKind.Local).AddTicks(2345));
+                        .HasDefaultValue(new DateTime(2023, 8, 24, 21, 14, 0, 386, DateTimeKind.Local).AddTicks(7678));
 
                     b.Property<string>("DiaChi")
                         .HasMaxLength(300)
@@ -45,7 +45,7 @@ namespace Server.Migrations
                         .HasColumnType("VARCHAR");
 
                     b.Property<string>("HinhAnh")
-                        .HasColumnType("NVARCHAR");
+                        .HasColumnType("NVARCHAR(MAX)");
 
                     b.Property<string>("HoTen")
                         .IsRequired()

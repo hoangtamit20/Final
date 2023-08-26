@@ -9,13 +9,16 @@ E:\ProjectFinal\Server\bin\Debug\net8.0\AutoMapper.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Azure.Core.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Azure.Identity.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\Humanizer.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -27,9 +30,11 @@ E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\Mono.TextTemplating.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\ProjectFinal\Server\bin\Debug\net8.0\System.CodeDom.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\System.Drawing.Common.dll
 E:\ProjectFinal\Server\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
@@ -72,8 +77,3 @@ E:\ProjectFinal\Server\obj\Debug\net8.0\refint\Server.dll
 E:\ProjectFinal\Server\obj\Debug\net8.0\Server.pdb
 E:\ProjectFinal\Server\obj\Debug\net8.0\Server.genruntimeconfig.cache
 E:\ProjectFinal\Server\obj\Debug\net8.0\ref\Server.dll
-E:\ProjectFinal\Server\bin\Debug\net8.0\Humanizer.dll
-E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
-E:\ProjectFinal\Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-E:\ProjectFinal\Server\bin\Debug\net8.0\Mono.TextTemplating.dll
-E:\ProjectFinal\Server\bin\Debug\net8.0\System.CodeDom.dll
